@@ -66,12 +66,3 @@ function sum(x, y, ...z, w) {  // SyntaxError: Rest parameter must be last forma
 
 const object = { a: 1, b: 2, ...c, d: 3 };  // SyntaxError: Unexpected token ","
 ```
-
-
-
-
-
-
-
-
-s
