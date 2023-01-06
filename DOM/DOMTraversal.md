@@ -1,8 +1,6 @@
 # DOM Traversal
 ## 1. DOM Traversal là gì:
-```
-DOM traversal là quá trình truy cập và duyệt qua các phần tử trong cây DOM (Document Object Model) của trang web. Mục đích của DOM traversal là lấy ra các phần tử cần thiết hoặc thực hiện các thao tác trên chúng, như thay đổi nội dung hay giao diện của chúng.
-```
+> DOM traversal là quá trình truy cập và duyệt qua các phần tử trong cây DOM (Document Object Model) của trang web. Mục đích của DOM traversal là lấy ra các phần tử cần thiết hoặc thực hiện các thao tác trên chúng, như thay đổi nội dung hay giao diện của chúng.
 
 Trong JavaScript, bạn có thể sử dụng các hàm như querySelector và querySelectorAll để lấy ra các phần tử theo một selector CSS, hoặc sử dụng các hàm như getElementById, getElementsByTagName, và getElementsByClassName để lấy ra các phần tử theo id, tên thẻ, hoặc tên lớp tương ứng.
 
