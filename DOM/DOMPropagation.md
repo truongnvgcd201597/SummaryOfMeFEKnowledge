@@ -6,6 +6,8 @@
 Trong JavaScript, có hai loại event propagation:
 - **Bubbling**: `Sự kiện bắt đầu từ phần tử con và di chuyển lên trên cây DOM tới phần tử cha`. Điều này có nghĩa là nếu bạn đặt một sự kiện vào một phần tử con, sự kiện đó cũng sẽ được gọi cho tất cả các phần tử cha của nó trong cây DOM.
 - **Capturing**: `Sự kiện bắt đầu từ phần tử cha và di chuyển xuống cây DOM tới phần tử con`. Điều này có nghĩa là nếu bạn đặt một sự kiện vào một phần tử cha, sự kiện đó cũng sẽ được gọi cho tất cả các phần tử con của nó trong cây DOM.
+- 
+![image](https://user-images.githubusercontent.com/75243419/211042840-35e19603-79d0-4b4d-bddd-cc19cad60e4b.png)
 
 Mặc định, event propagation sử dụng phương pháp bubbling. Tuy nhiên, bạn có thể sử dụng thuộc tính "useCapture" của hàm addEventListener để chỉ định rằng bạn muốn sử dụng phương pháp capturing thay vì bubbling.
 
