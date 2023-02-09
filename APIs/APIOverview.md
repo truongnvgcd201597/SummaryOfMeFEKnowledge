@@ -26,4 +26,11 @@ API thường được xây dựng bởi các nhà phát triển phần mềm v�
 | Sandbox environment | Đây là một môi trường riêng biệt, biệt lập được sử dụng để kiểm tra và thử nghiệm. Nó thường được sử dụng để thử nghiệm những ý tưởng hoặc cách tiếp cận mới mà không ảnh hưởng đến môi trường sản xuất. |
 | Cloud environment      | Đây là môi trường sử dụng các dịch vụ đám mây để cung cấp các tính năng và dữ liệu cho các ứng dụng sử dụng API.     |
 
-
+## 4. API types:
+Có nhiều cách để lấy API, bao gồm:
+- Sử dụng fetch API trong JavaScript: Đây là cách phổ biến để lấy API trong JavaScript, như đã mô tả trong câu hỏi trước đó.
+- Sử dụng thư viện XHR: Bạn có thể sử dụng XMLHttpRequest (XHR) để gửi yêu cầu mạng và lấy dữ liệu từ API. XHR là một API của JavaScript được sử dụng để gửi yêu cầu mạng trước khi fetch được ra đời.
+- Sử dụng jQuery: Nếu bạn sử dụng jQuery, bạn có thể sử dụng phương thức $.ajax hoặc $.get để lấy dữ liệu từ API.
+- Sử dụng Axios: Axios là một thư viện JavaScript mã nguồn mở dễ dàng sử dụng để gửi yêu cầu mạng và lấy dữ liệu từ API. Nó cung cấp các tính năng tương tự như fetch, nhưng có thêm tính năng và tùy chọn bổ sung.
+- Sử dụng thư viện mạng khác: Có nhiều thư viện mạng khác, như Superagent và Request, có thể sử dụng để lấy dữ liệu từ API.
+- Lựa chọn của bạn sẽ phụ thuộc vào nhu cầu và yêu cầu của dự án của bạn.
