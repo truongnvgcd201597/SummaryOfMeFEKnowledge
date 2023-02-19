@@ -20,13 +20,24 @@ Shadow DOM là một công nghệ mạnh mẽ và cần thiết trong việc t�
 - Pseudo-elements: Là các phần tử ảo được tạo ra bởi Shadow DOM và có thể được áp dụng kiểu như các phần tử thực sự. Pseudo-elements được định nghĩa trong phần Shadow DOM của phần tử và không xuất hiện trong cây DOM của trang web.
 
 ## 3. Các phương thức:
+### 1. Phương thức:
 - shadowRoot: Là thuộc tính chỉ đọc để truy cập đối tượng ShadowRoot của một phần tử.
 - attachShadow(): Là phương thức để tạo một ShadowRoot cho phần tử, trả về một tham chiếu đến đối tượng ShadowRoot.
 - mode: Là thuộc tính của đối tượng ShadowRoot, chỉ định chế độ hiển thị của Shadow DOM. Có hai giá trị là 'open' và 'closed'.
 - host: Là thuộc tính chỉ đọc của đối tượng ShadowRoot, trả về phần tử chủ sở hữu của ShadowRoot.
 - :host: Là một CSS pseudo-class, cho phép bạn áp dụng các quy tắc CSS vào phần tử chủ sở hữu của ShadowRoot.
 - ::shadow: Là một CSS pseudo-element, cho phép bạn áp dụng các quy tắc CSS vào ShadowRoot.
-- ::content: Là một CSS pseudo-element, cho phép bạn áp dụng các quy tắc CSS vào phần nội dung được chèn vào phần tử sử dụng thẻ <content>.
+- ::content: Là một CSS pseudo-element, cho phép bạn áp dụng các quy tắc CSS vào phần nội dung được chèn vào phần tử sử dụng thẻ.
+- attachShadow(options): tạo một ShadowRoot mới và gắn nó vào phần tử hiện tại.
+- open(): mở chế độ Shadow DOM của phần tử, cho phép truy cập và sửa đổi nội dung bên trong ShadowRoot.
+- close(): đóng chế độ Shadow DOM của phần tử, không cho phép truy cập và sửa đổi nội dung bên trong ShadowRoot.
+- querySelector(): trả về phần tử đầu tiên bên trong ShadowRoot mà khớp với một bộ chọn được cung cấp.
+- querySelectorAll(): trả về một danh sách các phần tử bên trong ShadowRoot mà khớp với một bộ chọn được cung cấp.
+### 2. Thuộc tính:
+Thuộc tính:
+- shadowRoot: trả về một tham chiếu tới đối tượng ShadowRoot được liên kết với phần tử hiện tại.
+- mode: đặt hoặc trả về chế độ Shadow DOM hiện tại của phần tử.
+<content>.
 ## 3. Ví dụ:
 Đây là một ví dụ đơn giản về Shadow DOM. Trong ví dụ này, chúng ta sử dụng phương thức `attachShadow()` để tạo một Shadow DOM cho một phần tử `<my-element>` và thêm một số nội dung vào đó.
 ```
