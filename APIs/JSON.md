@@ -1,7 +1,7 @@
 # JSON:
 
 ## 1. Định nghĩa:
-> JSON là viết tắt của "JavaScript Object Notation" (Định dạng đối tượng JavaScript), đây là một định dạng dữ liệu phổ biến được sử dụng để trao đổi dữ liệu giữa các ứng dụng web.
+> JSON là viết tắt của "JavaScript Object Notation" (Định dạng đối tượng JavaScript), đây là một định dạng dữ liệu phổ biến được sử dụng để trao đổi dữ liệu giữa các ứng dụng web.  đây là một dạng dữ liệu tuân theo một quy luật nhất định mà hầu hết các ngôn ngữ lập trình hiện nay đều có thể đọc được, bạn có thể sử dụng lưu nó vào một file, một record trong CSDL rất dễ dàng. JSON có định dạng đơn giản, dễ dàng sử dụng và truy vấn hơn XML rất nhiều nên tính ứng dụng của nó hiện nay rất là phổ biến.
 
 JSON được thiết kế để dễ đọc và viết cho con người, và dễ dàng phân tích và tạo ra cho máy tính. Nó là một định dạng văn bản đơn giản, gồm các cặp giá trị khóa và giá trị, trong đó khóa là một chuỗi và giá trị có thể là một chuỗi, số, đối tượng, mảng, boolean hoặc null.
 
