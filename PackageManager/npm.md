@@ -79,3 +79,154 @@ Trong semantic versioning (semver), các dấu * ~ ^ được sử dụng để 
 - Dấu < được sử dụng để chỉ định phiên bản nhỏ hơn phiên bản cụ thể. Ví dụ: <1.2.3 có nghĩa là phiên bản nhỏ hơn 1.2.3.
 
 Trong một file package.json, các phạm vi phiên bản này được sử dụng để chỉ định phiên bản của các phụ thuộc cần thiết cho ứng dụng của bạn. Việc sử dụng chính xác phạm vi phiên bản là rất quan trọng để đảm bảo tính ổn định của ứng dụng của bạn và tránh các xung đột phiên bản không mong muốn.
+
+## 8. NPM Scripts:
+> NPM Scripts là một tính năng của NPM, cho phép bạn thực thi các lệnh trong file package.json. NPM Scripts có thể được sử dụng để thực thi các lệnh trong quá trình phát triển ứng dụng, như chạy các lệnh kiểm tra mã, biên dịch mã, hoặc triển khai ứng dụng.
+
+Trong file package.json, bạn có thể thêm một thuộc tính scripts để chứa các lệnh cần thực thi. Ví dụ:
+```
+{
+  "name": "my-app",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
+```
+Trong ví dụ trên, chúng ta có hai lệnh được định nghĩa trong thuộc tính scripts:
+- Lệnh start: Chạy lệnh node index.js.
+- Lệnh test: Chạy lệnh echo "Error: no test specified" && exit 1.
+
+Để thực thi các lệnh này, bạn có thể sử dụng câu lệnh npm run <tên lệnh>. Ví dụ:
+```
+npm run start
+npm run test
+```
+
+## 9. Các lệnh NPM:
+> NPM cung cấp một số lệnh hữu ích để quản lý các package trong ứng dụng của bạn. Các lệnh này có thể được sử dụng để cài đặt, cập nhật, xóa các package, hoặc kiểm tra các thông tin về các package.
+
+Các lệnh NPM thường được sử dụng:
+### 9.1. Lệnh khởi tạo:
+| Lệnh | Mô tả |
+| --- | --- |
+| npm init | Khởi tạo file package.json |
+| npm init -y | Khởi tạo file package.json với các giá trị mặc định |
+| npm init --yes | Khởi tạo file package.json với các giá trị mặc định |
+| npm init --scope=<tên scope> | Khởi tạo file package.json với tên scope |
+| npm init --scope=<tên scope> --yes | Khởi tạo file package.json với tên scope và các giá trị mặc định |
+
+## 9.2. Lệnh cài đặt:
+| Lệnh | Mô tả |
+| --- | --- |
+| npm install | Cài đặt các package được liệt kê trong file package.json |
+| npm install <tên package> | Cài đặt một package |
+| npm install <tên package>@<phiên bản> | Cài đặt một package với phiên bản cụ thể |
+| npm install <tên package>@<phiên bản> --save | Cài đặt một package với phiên bản cụ thể và lưu vào file package.json, trong phần dependencies. |
+| npm install <tên package>@<phiên bản> --save-dev | Cài đặt một package với phiên bản cụ thể và lưu vào file package.json, trong phần devDependencies. |
+| npm install <tên package>@<phiên bản> --save-optional | Cài đặt một package với phiên bản cụ thể và lưu vào file package.json, trong phần optionalDependencies. |
+| npm install <tên package>@<phiên bản> --save-exact | Cài đặt một package với phiên bản cụ thể và lưu vào file package.json, trong phần dependencies. |
+| npm install <tên package>@<phiên bản> --no-save | Cài đặt một package với phiên bản cụ thể, nhưng không lưu vào file package.json. |
+| npm install <tên package>@<phiên bản> --global | Cài đặt một package với phiên bản cụ thể, nhưng không lưu vào file package.json. |
+| npm install <tên package>@<phiên bản> --no-package-lock | Cài đặt một package cụ thể (tên và phiên bản được chỉ định) và tắt tính năng khóa package lock. |
+| npm install <tên package>@<phiên bản> --dry-run | Để kiểm tra xem việc cài đặt một package cụ thể sẽ diễn ra như thế nào, mà không thực sự cài đặt gói đó. |
+| npm install <tên package>@<phiên bản> --force | Cài đặt một package cụ thể trong phiên bản cụ thể và ghi đè lên bất kỳ version nào hiện có của package đó, bất kể phiên bản đó có được yêu cầu bởi các package khác hoặc không. |
+| npm install <tên package>@<phiên bản> --legacy-bundling | Dùng để bật chế độ "đóng gói cũ" (legacy bundling) khi cài đặt package. Chế độ này giúp tránh xung đột giữa các phiên bản của package và phụ thuộc vào các gói cài đặt trước đó. |
+| npm install <tên package>@<phiên bản> --no-shrinkwrap | Cài đặt một package với phiên bản cụ thể, một package cụ thể và không tạo file npm-shrinkwrap.json. |
+| npm install <tên package>@<phiên bản> --only=prod | Cài đặt các dependencies được liệt kê trong phần "dependencies" của tệp package.json, bỏ qua các dependencies trong phần "devDependencies". |
+| npm install <tên package>@<phiên bản> --only=dev | Cài đặt  các dependencies cần thiết cho môi trường phát triển (development environment) của một ứng dụng.  |
+| npm install <tên package>@<phiên bản> --package-lock-only | Được sử dụng để tạo lại file package-lock.json mà không cài đặt bất kỳ gói nào. |
+| npm install <tên package>@<phiên bản> --production | Cài đặt một package cụ thể cùng với tất cả các dependencies của nó, nhưng chỉ bao gồm các dependencies được liệt kê trong mục "dependencies" của package.json. |
+| npm install <tên package>@<phiên bản> --registry=<địa chỉ registry> | Cài đặt một package cụ thể từ một registry cụ thể. Mặc định, npm sử dụng registry chính thức của nó tại https://registry.npmjs.org/. |
+
+## 9.3. Lệnh cập nhật:
+| Lệnh | Mô tả |
+| --- | --- |
+| npm update | Cập nhật tất cả các package được liệt kê trong file package.json |
+| npm update <tên package> | Cập nhật một package |
+| npm update <tên package>@<phiên bản> | Cập nhật một package với phiên bản cụ thể |
+| npm update <tên package>@<phiên bản> --save | Cập nhật một package với phiên bản cụ thể và lưu vào file package.json, trong phần dependencies. |
+| npm update <tên package>@<phiên bản> --save-dev | Cập nhật một package với phiên bản cụ thể và lưu vào file package.json, trong phần devDependencies. |
+| npm update <tên package>@<phiên bản> --save-optional | Cập nhật một package với phiên bản cụ thể và lưu vào file package.json, trong phần optionalDependencies. |
+| npm update <tên package>@<phiên bản> --save-exact | Cập nhật một package với phiên bản cụ thể và lưu vào file package.json, trong phần dependencies. |
+| npm update <tên package>@<phiên bản> --no-save | Cập nhật một package với phiên bản cụ thể, nhưng không lưu vào file package.json. |
+| npm update <tên package>@<phiên bản> --global | Cập nhật một package với phiên bản cụ thể, nhưng không lưu vào file package.json. |
+| npm update <tên package>@<phiên bản> --no-package-lock | Cập nhật một package cụ thể (tên và phiên bản được chỉ định) và tắt tính năng khóa package lock. |
+| npm update <tên package>@<phiên bản> --dry-run | Để kiểm tra xem việc cập nhật một package cụ thể sẽ diễn ra như thế nào, mà không thực sự cập nhật gói đó. |
+| npm update <tên package>@<phiên bản> --force | Cập nhật một package cụ thể trong phiên bản cụ thể và ghi đè lên bất kỳ version nào hiện có của package đó, bất kể phiên bản đó có được yêu cầu bởi các package khác hoặc không. |
+
+## 9.4. Lệnh gỡ bỏ:
+| Lệnh | Mô tả |
+| --- | --- |
+| npm uninstall <tên package> | Gỡ bỏ một package |
+| npm rm <tên package> | Gỡ bỏ một package |
+| npm uninstall <tên package> --save | Gỡ bỏ một package và lưu vào file package.json, trong phần dependencies. |
+| npm uninstall <tên package> --save-dev | Gỡ bỏ một package và lưu vào file package.json, trong phần devDependencies. |
+| npm uninstall <tên package> --save-optional | Gỡ bỏ một package và lưu vào file package.json, trong phần optionalDependencies. |
+| npm uninstall <tên package> --save-exact | Gỡ bỏ một package và lưu vào file package.json, trong phần dependencies. |
+| npm uninstall <tên package> --no-save | Gỡ bỏ một package, nhưng không lưu vào file package.json. |
+| npm outdated | Liệt kê các package đã cài đặt và có phiên bản mới hơn. |
+| npm install -g npm-check-updates && ncu -u | Cài đặt npm-check-updates và sử dụng nó để cập nhật tất cả các package trong file package.json lên phiên bản mới nhất. |
+| npm install -g npm-check | Cài đặt npm-check và sử dụng nó để kiểm tra tất cả các package đã cài đặt và thông báo về những package cần cập nhật lên phiên bản mới nhất. | 
+| npm install -g npm-check | Cài đặt npm-check và sử dụng nó để kiểm tra tất cả các package đã cài đặt và thông báo về những package cần cập nhật lên phiên bản mới nhất. |
+
+## 9.5. Lệnh tìm kiếm:
+| Lệnh | Mô tả |
+| --- | --- |
+| npm search <tên package> | Tìm kiếm một package |
+| npm search <tên package> --json | Tìm kiếm một package và trả về kết quả dưới dạng JSON. |
+| npm search <tên package> --parseable | Tìm kiếm một package và trả về kết quả dưới dạng parseable. |
+| npm search <tên package> --long | Tìm kiếm một package và trả về kết quả dưới dạng long. |
+| npm search <tên package> --unicode | Tìm kiếm một package và trả về kết quả dưới dạng unicode. |
+| npm search <tên package> --no-unicode | Tìm kiếm một package và trả về kết quả dưới dạng không unicode. |
+| npm search <tên package> --global | Tìm kiếm một package và trả về kết quả dưới dạng global. |
+| npm search <tên package> --no-global | Tìm kiếm một package và trả về kết quả dưới dạng không global. |
+| npm search <tên package> --production | Tìm kiếm một package và trả về kết quả dưới dạng production. |
+| npm search <tên package> --no-production | Tìm kiếm một package và trả về kết quả dưới dạng không production. |
+
+## 9.6. Lệnh xem thông tin:
+| Lệnh | Mô tả |
+| --- | --- |
+| npm info <tên package> | Xem thông tin một package |
+| npm info <tên package> --json | Xem thông tin một package và trả về kết quả dưới dạng JSON. |
+| npm info <tên package> --parseable | Xem thông tin một package và trả về kết quả dưới dạng parseable. |
+| npm info <tên package> --long | Xem thông tin một package và trả về kết quả dưới dạng long. |
+| npm info <tên package> --unicode | Xem thông tin một package và trả về kết quả dưới dạng unicode. |
+| npm info <tên package> --no-unicode | Xem thông tin một package và trả về kết quả dưới dạng không unicode. |
+| npm info <tên package> --global | Xem thông tin một package và trả về kết quả dưới dạng global. |
+| npm -v | Xem phiên bản của npm. |
+| npm --version | Xem phiên bản của npm. |
+
+
+## 9.7. Lệnh xem danh sách:
+| Lệnh | Mô tả |
+| --- | --- |
+| npm list | Xem danh sách các package đã cài đặt |
+| npm ls | Xem danh sách các package đã cài đặt |
+| npm list --depth=0 | Xem danh sách các package đã cài đặt và không hiển thị các package con của các package đã cài đặt. |
+| npm list --depth=1 | Xem danh sách các package đã cài đặt và hiển thị các package con của các package đã cài đặt. |
+| npm list --depth=2 | Xem danh sách các package đã cài đặt và hiển thị các package con của các package đã cài đặt, và các package con của các package con đã cài đặt. |
+
+## 9.8. Lệnh xem chi tiết:
+| Lệnh | Mô tả |
+| --- | --- |
+| npm view <tên package> | Xem chi tiết một package |
+| npm view <tên package> --json | Xem chi tiết một package và trả về kết quả dưới dạng JSON. |
+| npm view <tên package> --parseable | Xem chi tiết một package và trả về kết quả dưới dạng parseable. |
+| npm view <tên package> --long | Xem chi tiết một package và trả về kết quả dưới dạng long. |
+| npm view <tên package> --unicode | Xem chi tiết một package và trả về kết quả dưới dạng unicode. |
+
+## 9.9. Lệnh xem tài liệu:
+| Lệnh | Mô tả |
+| --- | --- |
+| npm help | Xem tài liệu |
+| npm help <tên lệnh> | Xem tài liệu của một lệnh |
+| npm help <tên lệnh> --json | Xem tài liệu của một lệnh và trả về kết quả dưới dạng JSON. |
+| npm help <tên lệnh> --parseable | Xem tài liệu của một lệnh và trả về kết quả dưới dạng parseable. |
+| npm help <tên lệnh> --long | Xem tài liệu của một lệnh và trả về kết quả dưới dạng long. |
+| npm help <tên lệnh> --unicode | Xem tài liệu của một lệnh và trả về kết quả dưới dạng unicode. |
+
+## 9.10. Lệnh xóa:
+| Lệnh | Mô tả |
+| --- | --- |
