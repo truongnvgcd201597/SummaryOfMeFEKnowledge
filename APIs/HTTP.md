@@ -32,6 +32,14 @@ HTTP Methods, còn được gọi là HTTP Verbs, là các phương thức đư�
 
 Các phương thức HTTP khác cũng có thể được sử dụng, tuy nhiên những phương thức này là phổ biến nhất và được sử dụng rộng rãi trong các ứng dụng web.
 
+| Tính năng	 | POST	| PUT/PUSH | PATCH |
+|:-----------:|:-----------:|:-----------:|:-----------:|
+|Tác vụ |	Tạo mới một tài nguyên |	Tạo hoặc cập nhật tài nguyên |	Cập nhật một phần tài nguyên |
+| Thay đổi dữ liệu | Thay đổi toàn bộ dữ liệu của tài nguyên | Thay đổi toàn bộ dữ liệu của tài nguyên | Thay đổi một phần dữ liệu của tài nguyên |
+| Thích hợp sử dụng khi | Không biết hoặc không quan tâm đến tài nguyên đã tồn tại | Biết rõ tài nguyên đã tồn tại và cần thay đổi | Biết rõ tài nguyên đã tồn tại và cần cập nhật một phần dữ liệu |
+| Phương thức idempotent | Không | Có | Có |
+| Response | Trả về mã tài nguyên mới | Trả về mã thành công | Trả về mã thành công |
+
 ## 5. HTTP Status Codes:
 HTTP Status Codes là mã trả về của các yêu cầu HTTP, được sử dụng để xác định kết quả của yêu cầu đó có thành công hay không và thông báo cho client biết lỗi gì đã xảy ra (nếu có). HTTP Status Codes được trả về bởi server, bao gồm 3 chữ số đầu tiên để chỉ mã hiệu và thông báo tương ứng với mã đó.
 

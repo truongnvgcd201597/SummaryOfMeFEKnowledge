@@ -33,6 +33,10 @@ Tất cả các tệp này là rất quan trọng trong quá trình phát triể
 * --no-save: Tùy chọn này sẽ cài đặt package mà không thêm nó vào phần "dependencies" hoặc "devDependencies" trong package.json.
 * --dry-run: Tùy chọn này sẽ không cài đặt package, nhưng sẽ hiển thị những gì sẽ xảy ra nếu bạn cài đặt package đó.
 * --force: Tùy chọn này sẽ buộc cài đặt package, ngay cả khi phiên bản của package không tương thích với phiên bản của npm hoặc node.
+- --prefix <đường dẫn>: Chỉ định thư mục cài đặt package.
+- --production: Cài đặt các package cần thiết cho production.
+- --ignore-scripts: Không thực thi bất kỳ script postinstall nào.
+- --no-optional: Không cài đặt package optional.
 
 ## 5. Các tùy chọn cập nhật NPM:
 Có một số tùy chọn để cập nhật NPM:
@@ -189,15 +193,7 @@ Các lệnh NPM thường được sử dụng:
 | Lệnh | Mô tả |
 | --- | --- |
 | npm info <tên package> | Xem thông tin một package |
-| npm info <tên package> --json | Xem thông tin một package và trả về kết quả dưới dạng JSON. |
-| npm info <tên package> --parseable | Xem thông tin một package và trả về kết quả dưới dạng parseable. |
-| npm info <tên package> --long | Xem thông tin một package và trả về kết quả dưới dạng long. |
-| npm info <tên package> --unicode | Xem thông tin một package và trả về kết quả dưới dạng unicode. |
-| npm info <tên package> --no-unicode | Xem thông tin một package và trả về kết quả dưới dạng không unicode. |
-| npm info <tên package> --global | Xem thông tin một package và trả về kết quả dưới dạng global. |
-| npm -v | Xem phiên bản của npm. |
-| npm --version | Xem phiên bản của npm. |
-
+| npm info <tên package> --json | Xem thông tin một package 
 
 ## 9.7. Lệnh xem danh sách:
 | Lệnh | Mô tả |
@@ -213,9 +209,6 @@ Các lệnh NPM thường được sử dụng:
 | --- | --- |
 | npm view <tên package> | Xem chi tiết một package |
 | npm view <tên package> --json | Xem chi tiết một package và trả về kết quả dưới dạng JSON. |
-| npm view <tên package> --parseable | Xem chi tiết một package và trả về kết quả dưới dạng parseable. |
-| npm view <tên package> --long | Xem chi tiết một package và trả về kết quả dưới dạng long. |
-| npm view <tên package> --unicode | Xem chi tiết một package và trả về kết quả dưới dạng unicode. |
 
 ## 9.9. Lệnh xem tài liệu:
 | Lệnh | Mô tả |
@@ -227,6 +220,13 @@ Các lệnh NPM thường được sử dụng:
 | npm help <tên lệnh> --long | Xem tài liệu của một lệnh và trả về kết quả dưới dạng long. |
 | npm help <tên lệnh> --unicode | Xem tài liệu của một lệnh và trả về kết quả dưới dạng unicode. |
 
-## 9.10. Lệnh xóa:
+## 9.10. Lệnh set:
 | Lệnh | Mô tả |
 | --- | --- |
+| npm set <tên package> | Set một package |
+| npm set <tên package> --json | Set một package và trả về kết quả dưới dạng JSON. |
+| npm set init.author.name "Nguyễn Văn A" | Set tên tác giả cho package. |
+| npm set init.liscense "MIT" | Set giấy phép cho package. |
+| npm set init.version "1.0.0" | Set phiên bản cho package. |
+
+## 9.11. Lệnh 

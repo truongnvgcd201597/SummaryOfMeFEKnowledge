@@ -3,6 +3,8 @@
 ## 1. URL là gì?:
 > URL là viết tắt của "Uniform Resource Locator" (Trình định vị tài nguyên thống nhất), là một chuỗi ký tự định danh địa chỉ trên mạng cho một tài nguyên cụ thể, như một trang web, một tập tin hoặc một ứng dụng web. URL cung cấp thông tin về giao thức được sử dụng để truy cập tài nguyên (ví dụ: HTTP, FTP), địa chỉ máy chủ và đường dẫn đến tài nguyên trên máy chủ. Ví dụ: "https://www.example.com/index.html" là một URL cho trang chủ của trang web "example.com" được truy cập thông qua giao thức HTTPS.
 
+![](https://seothetop.com/cms/medias/standard/2020/5/30/110536_url-than-thien-seo.png)
+
 ## 2. Cấu trúc của URL:
 Cấu trúc của URL bao gồm các thành phần sau:
 Cấu trúc của một URL gồm ba phần chính: giao thức (protocol), tên miền (domain name) và đường dẫn (path).
