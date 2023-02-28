@@ -1,14 +1,6 @@
 # 1. speechSynthesis là gì?
 > window.speechSynthesis là một API trong trình duyệt web HTML5 cho phép các trang web tạo ra giọng nói tự động và dễ dàng điều khiển bằng JavaScript. Nó cho phép truy cập đến các tính năng của trình tổng hợp giọng nói của hệ thống hoặc các dịch vụ bên ngoài để tạo ra các thông báo, chỉ dẫn và lời nhắc trong ứng dụng web. API này hỗ trợ các tính năng như lựa chọn giọng nói, tốc độ và âm lượng, cùng với các sự kiện để phát hiện và điều khiển quá trình nói.
 
-```mermaid
-  graph TD;
-      A-->B;
-      A-->C;
-      B-->D;
-      C-->D;
-```
-
 # 2. Cách thức triển khai:
  __Step 1:__  Tạo một đối tượng SpeechSynthesisUtterance để thiết lập nội dung giọng nói:
 ```
