@@ -12,10 +12,14 @@ HTTP bao gồm các thành phần sau:
 - Request message (Tin nhắn yêu cầu): Là thông điệp mà client gửi đến server để yêu cầu một tài nguyên cụ thể trên server.
 - Response message (Tin nhắn phản hồi): Là thông điệp mà server gửi về client để cung cấp tài nguyên được yêu cầu hoặc thông báo lỗi.
 - Uniform Resource Identifier (URI): Định danh địa chỉ tài nguyên trên mạng, bao gồm cả URL (Uniform Resource Locator) và URN (Uniform Resource Name).
-- Method (Phương thức): Định nghĩa các phương thức mà client sử dụng để gửi các yêu cầu đến server, bao gồm GET, POST, PUT, DELETE và nhiều phương thức khác.
-- Status codes: Là các mã số được server trả về trong tin nhắn phản hồi để báo cho client biết kết quả của yêu cầu của họ, bao gồm các mã như 200 (OK), 404 (Not Found), 500 (Internal Server Error) và nhiều mã khác.
-- Headers: Là các thông tin bổ sung được gửi cùng với tin nhắn yêu cầu hoặc phản hồi, cung cấp thông tin về định dạng của tin nhắn, định dạng dữ liệu, thông tin xác thực và nhiều thông tin khác.
-- Cookies: Là các thông tin được lưu trữ trên máy khách và được sử dụng để theo dõi thông tin của người dùng trên trình duyệt, cung cấp thông tin về phiên làm việc, dữ liệu đăng nhập và nhiều thông tin khác.
+- Phương thức (Method): Là cách thức giao tiếp giữa client và server, bao gồm các phương thức GET, POST, PUT, DELETE, PATCH...
+URL (Uniform Resource Locator): Là định danh tài nguyên trên web, bao gồm tên miền, đường dẫn đến tài nguyên.
+- Header: Là thông tin meta-data liên quan đến việc truyền tải dữ liệu, bao gồm các thông tin như User-Agent, Accept-Encoding, Accept-Language, Cookie...
+- Body: Là nội dung dữ liệu thực sự được truyền tải giữa client và server.
+- Status Code: Là mã trạng thái cho biết kết quả xử lý yêu cầu, bao gồm các mã trạng thái như 200 OK, 404 Not Found, 500 Internal Server Error...
+- Cookies: Là cách để server lưu trữ thông tin liên quan đến phiên làm việc của client trên máy tính của client.
+- Cache: Là cơ chế lưu trữ tạm thời để giảm thiểu số lần truy cập lại server.
+- Authentication: Là cơ chế xác thực người dùng trước khi truy cập vào các tài nguyên có hạn chế truy cập. Bao gồm các phương thức như Basic, Digest, OAuth...
 
 ## 3. HTTP URLs:
 > URL là viết tắt của "Uniform Resource Locator" (Trình định vị tài nguyên thống nhất), là một chuỗi ký tự định danh địa chỉ trên mạng cho một tài nguyên cụ thể, như một trang web, một tập tin hoặc một ứng dụng web. URL cung cấp thông tin về giao thức được sử dụng để truy cập tài nguyên (ví dụ: HTTP, FTP), địa chỉ máy chủ và đường dẫn đến tài nguyên trên máy chủ. Ví dụ: "https://www.example.com/index.html" là một URL cho trang chủ của trang web "example.com" được truy cập thông qua giao thức HTTPS.
