@@ -113,6 +113,24 @@ xhr.send();
 ```
 Trong ví dụ này, đối tượng XMLHttpRequest được tạo bằng cách gọi hàm khởi tạo new XMLHttpRequest(). Sau đó, phương thức open() được gọi để thiết lập yêu cầu GET đến https://example.com/api/data, và cuối cùng xhr.send() được gọi để gửi yêu cầu.
 
+### 5. xhr.onprogress():
+> onprogress là một thuộc tính của đối tượng XMLHttpRequest (XHR) trong JavaScript, nó cho phép bạn theo dõi tiến trình của một yêu cầu HTTP/HTTPS đang được gửi đi.
+
+Khi một yêu cầu XHR được gửi đi, các sự kiện onreadystatechange và onprogress sẽ được kích hoạt trong quá trình nhận phản hồi từ máy chủ.
+
+Thuộc tính onprogress cho phép bạn đăng ký một hàm được gọi liên tục trong quá trình nhận phản hồi từ máy chủ. Trong hàm này, bạn có thể truy cập các thông tin về tiến trình của yêu cầu như loaded (số lượng byte đã tải về) và total (tổng số byte cần tải về). Bằng cách sử dụng các thông tin này, bạn có thể cập nhật giao diện người dùng để hiển thị tiến trình của yêu cầu.
+
+```
+const xhr = new XMLHttpRequest();
+xhr.open('GET', '/path/to/resource');
+xhr.onprogress = function(event) {
+  console.log(`Loaded ${event.loaded} bytes out of ${event.total}`);
+};
+xhr.send();
+```
+
+Trong ví dụ này, chúng ta đang gửi một yêu cầu GET đến /path/to/resource và đăng ký một hàm cho sự kiện onprogress. Mỗi lần sự kiện được kích hoạt, chúng ta sẽ in ra số lượng byte đã tải về và tổng số byte cần tải về.
+
 
 
 
