@@ -229,4 +229,7 @@ Các lệnh NPM thường được sử dụng:
 | npm set init.liscense "MIT" | Set giấy phép cho package. |
 | npm set init.version "1.0.0" | Set phiên bản cho package. |
 
-## 9.11. Lệnh 
+## 9.11. Lệnh:
+- npm get: Lệnh này được sử dụng để lấy giá trị của một biến cấu hình trong NPM. Ví dụ, nếu bạn muốn xem giá trị của biến registry, bạn có thể sử dụng lệnh sau: npm get registry.
+- npm set: Lệnh này được sử dụng để thiết lập giá trị cho một biến cấu hình trong NPM. Ví dụ, nếu bạn muốn thiết lập giá trị cho biến registry thành http://registry.npmjs.org/, bạn có thể sử dụng lệnh sau: npm set registry http://registry.npmjs.org/.
+- npm delete: Lệnh này được sử dụng để xóa một biến cấu hình đã được thiết lập trong NPM. Ví dụ, nếu bạn muốn xóa giá trị của biến registry, bạn có thể sử dụng lệnh sau: npm delete registry.
