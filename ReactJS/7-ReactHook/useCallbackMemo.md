@@ -25,6 +25,28 @@ function MyComponent() {
 ```
 Trong ví dụ trên, hàm handleClick được memoize bởi useCallback và không thay đổi giữa các lần render của MyComponent. Điều này giúp giảm số lượng render lại không cần thiết của các component con khi component cha render lại.
 
+# memo:
+> React.memo() là một Higher Order Component (HOC) trong React.js được sử dụng để tối ưu hóa việc render lại của component. Nó giúp tránh việc render lại không cần thiết khi các props của component không thay đổi.
+
+Khi một component được bao bọc bởi React.memo(), nó sẽ kiểm tra các props được truyền vào và chỉ render lại component khi có sự thay đổi trong các props đó. Nếu không có sự thay đổi, React.memo() sẽ sử dụng kết quả render trước đó và tránh quá trình render lại không cần thiết, giúp cải thiện hiệu suất ứng dụng.
+```
+import React from 'react';
+
+const MyComponent = React.memo(({ prop1, prop2 }) => {
+  return (
+    <div>
+      <p>Prop 1: {prop1}</p>
+      <p>Prop 2: {prop2}</p>
+    </div>
+  );
+});
+```
+Trong ví dụ trên, MyComponent được bao bọc bởi React.memo(). Khi các props prop1 và prop2 không thay đổi, component sẽ không được render lại. Chỉ khi có sự thay đổi trong các props này, component mới được render lại.
+
+React.memo() sử dụng shallow comparison (so sánh nông) để kiểm tra sự thay đổi của props. Điều này có nghĩa là nó chỉ so sánh giá trị của các props nguyên thủy (primitive values) hoặc tham chiếu (references) và không kiểm tra sâu vào cấu trúc dữ liệu phức tạp hơn như đối tượng (objects) hay mảng (arrays). Nếu các props có cấu trúc phức tạp và bạn muốn kiểm tra sâu hơn, bạn có thể sử dụng useCallback() hoặc useMemo() để tối ưu hóa.
+
+Lưu ý rằng React.memo() chỉ tối ưu hóa việc render lại của component và không ảnh hưởng đến việc xử lý logic bên trong component.
+
 # useMemo:
 > useMemo trong ReactJS được sử dụng để memoize (tối ưu) giá trị của một biểu thức. Nó giúp tránh tính toán lại giá trị trong mỗi lần render của component, đặc biệt khi giá trị đó được sử dụng trong các phần tử JSX hoặc tính toán phức tạp.
 
