@@ -1,45 +1,44 @@
-const { createStore, bindActionCreators, combineReducers } = require('redux');
-const produce = require('immer').produce;
+const redux = require('redux');
+const createStore = redux.createStore;
+const getState = redux.getState;
+const subscribe = redux.subscribe;
+const dispatch = redux.dispatch;
+
+const STREET_UPDATED = 'STREET_UPDATED';
 
 const initialState = {
     name: 'John',
     address: {
-        street: '123 Fake St',
-        city: 'Faketon',
-        state: 'MA',
+        street: '123 Main St',
+        city: 'New York',
+        state: 'NY',
     },
 }
 
-const STREET_UPDATED = 'STREET_UPDATED';
-
-const streetUpdated = (street) => {
+const updateStreet = (street)=>{
     return {
-        type: STREET_UPDATED,
+        type: 'STREET_UPDATED',
         payload: street,
-    };
+    }
 }
 
-const reducer = (state = initialState, action) => {
-    switch (action.type) {
+const reducer = (state = initialState, action) =>{
+    switch(action.type){
         case STREET_UPDATED:
-            // return {
-            //     ...state,
-            //     address: {
-            //         ...state.address,
-            //         street: action.payload,
-            //     },
-            // };
-            return produce(state, (draft) => {
-                draft.address.street = action.payload;
-            });
-        default:
-            return state;
+            return{
+                ...initialState,
+                address:{
+                    ...state.address,
+                    city: action.payload,
+                }
+            }
     }
-};
+}
 
 const store = createStore(reducer);
-console.log('Initial state', store.getState());
+const unsubscribe = store.subscribe(()=>{
+    console.log('State', store.getState());
+})
 
-const unsubscribe = store.subscribe(() => console.log('Updated state', store.getState()));
-store.dispatch(streetUpdated('456 Fake St'));
+store.dispatch(updateStreet('96 Huan Duc Luong'));
 unsubscribe();
