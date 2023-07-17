@@ -92,3 +92,35 @@ const EnhancedComponent = withHOC1(withHOC2(OriginalComponent));
 ```
 
 Việc sử dụng HOC giúp tách biệt logic và chức năng, tăng tính tái sử dụng và giúp mã của bạn dễ đọc và quản lý hơn trong React.
+
+### 4. Omit trong TypeScript:
+
+**Omit<T, K>** là một loại tiện ích kiểu dữ liệu được cung cấp sẵn để tạo ra một phiên bản mới của kiểu T, loại bỏ các thuộc tính được chỉ định bởi tập hợp K.
+
+Ví dụ, giả sử bạn có một kiểu dữ liệu như sau:
+
+```js
+interface Person {
+  name: string;
+  age: number;
+  address: string;
+}
+```
+
+Nếu bạn muốn tạo một phiên bản mới của Person mà không có thuộc tính address, bạn có thể sử dụng Omit như sau:
+
+```js
+type NewPerson = Omit<Person, "address">;
+```
+
+Kết quả là NewPerson sẽ có cùng cấu trúc như Person, nhưng không có thuộc tính address.
+
+```js
+{
+  name: string;
+  age: number;
+}
+```
+
+**keyof** được sử dụng để lấy tập hợp các khóa (keys) của kiểu T, sau đó tập hợp này được so sánh với tập hợp K. Các khóa trong K sẽ bị loại bỏ khỏi kiểu T.
+Nếu bạn muốn tạo một phiên bản mới của Person mà loại bỏ thuộc tính address, bạn có thể sử dụng Omit và keyof như sau:
