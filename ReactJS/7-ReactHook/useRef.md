@@ -46,6 +46,7 @@ Và chúng ta vẫn có thể mutate state trong trường hợp mà không mu�
 - Tham chiếu ref sẽ không làm thay đổi mỗi khi re-render (không như biến thông thường, bị reset mỗi khi re-render)
 - Thay đổi nó sẽ không gây ra re-render (không như state, props)
 - Thông tin được bao gói bên trong component (không như biến thông thường, có thể truy cập từ bên ngoài component)
+- functional component không thể sử dụng useRef, thay vào đó chúng ta sử dụng **useImperativeHandle** để tạo ra một tham chiếu tới component.
 
 ## 3. Những trường hợp cần lưu ý khi sử dụng useRef:
 
