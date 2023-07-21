@@ -81,3 +81,51 @@ function MyComponent() {
   // ...
 }
 ```
+
+---
+
+# FowardRef
+
+## 1. ForwardRef là gì?
+
+> `forwardRef`` là một hàm được sử dụng để chuyển tiếp (forward) một ref từ một component cha xuống một component con. Nó cho phép bạn truy cập và điều khiển các phần tử DOM hoặc thành phần React con bên trong component con một cách trực tiếp từ component cha.
+
+Ví dụ, giả sử chúng ta có một component con là ChildComponent như sau:
+
+```js
+// ChildComponent.js
+import React from "react";
+
+const ChildComponent = React.forwardRef((props, ref) => {
+  return <input type="text" ref={ref} />;
+});
+
+export default ChildComponent;
+```
+
+Sau đó, chúng ta có component cha là ParentComponent muốn sử dụng ChildComponent và truy cập vào phần tử input bên trong nó bằng cách sử dụng ref:
+
+```js
+// ParentComponent.js
+import React, { useRef } from "react";
+import ChildComponent from "./ChildComponent";
+
+const ParentComponent = () => {
+  const inputRef = useRef(null);
+
+  const focusInput = () => {
+    inputRef.current.focus();
+  };
+
+  return (
+    <div>
+      <ChildComponent ref={inputRef} />
+      <button onClick={focusInput}>Focus Input</button>
+    </div>
+  );
+};
+
+export default ParentComponent;
+```
+
+Khi chúng ta gọi focusInput() thông qua sự kiện click, ref sẽ cho phép chúng ta truy cập và tập trung vào phần tử input trong ChildComponent từ ParentComponent.

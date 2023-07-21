@@ -26,6 +26,6 @@ const MyComponent = () => {
 ```
 
 - `value`: Giá trị mà bạn muốn hiển thị trong React DevTools.
-- `formatValue`: Hàm callback nhận vào giá trị của biến state và trả về một chuỗi để hiển thị trong React DevTools. Ví dụ: (value) => formatValue(value) để định dạng giá trị một cách tùy chỉnh.
+- `formatValue`: Hàm callback nhận vào giá trị của biến state và trả về một chuỗi để hiển thị trong React DevTools. Ví dụ: `(value) => formatValue(value)` để định dạng giá trị một cách tùy chỉnh.
 
 Lưu ý rằng useDebugValue chỉ được sử dụng cho mục đích gỡ lỗi và phân tích trong quá trình phát triển và không ảnh hưởng đến logic hoạt động của ứng dụng trong môi trường sản xuất.
