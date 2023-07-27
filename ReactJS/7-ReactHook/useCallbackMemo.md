@@ -25,6 +25,26 @@ function MyComponent() {
 }
 ```
 
+Khi sử dụng React.memo, bạn cũng có thể cung cấp một hàm so sánh dependencies tùy chỉnh để xác định liệu component có cần render lại hay không dựa trên các điều kiện đặc biệt. Dưới đây là một ví dụ:
+
+```js
+import React from "react";
+
+const isEqual = (prevProps, nextProps) => {
+  // Kiểm tra sự khác biệt giữa prevProps và nextProps
+  // Trả về true nếu các props khác biệt, ngược lại trả về false
+};
+
+const MyComponent = React.memo(({ name, age }) => {
+  console.log("Rendering MyComponent");
+  return (
+    <div>
+      Hello, {name}! You are {age} years old.
+    </div>
+  );
+}, isEqual);
+```
+
 Trong ví dụ trên, hàm handleClick được memoize bởi useCallback và không thay đổi giữa các lần render của MyComponent. Điều này giúp giảm số lượng render lại không cần thiết của các component con khi component cha render lại.
 
 # 2. memo:
