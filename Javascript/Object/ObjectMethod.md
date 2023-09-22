@@ -1,14 +1,18 @@
 ## 1. Object.create():
+
 Object.create() là một phương thức tạo ra một Object mới và có thể dùng nó để mở rộng object đã tồn tại.
 
 ### Syntax
+
 ```
 Object.create(prototypeObject, propertiesObject)
 ```
- * prototypeObject: Object prototype mới được tạo. Nó có thể là object hoặc null.
- * propertiesObject: Các thuộc tính của object mới (tùy chọn).
- 
+
+- prototypeObject: Object prototype mới được tạo. Nó có thể là object hoặc null.
+- propertiesObject: Các thuộc tính của object mới (tùy chọn).
+
 ### Ví dụ:
+
 ```
 // Initialize an object with properties and methods
 const job = {
@@ -31,7 +35,9 @@ barista.showDetails();
 Output
 The barista position is hourly and is accepting applications.
 ```
+
 ### Không có Prototype:
+
 ```
 var person = Object.create(null);
 
@@ -44,11 +50,13 @@ person.name = 'Bui Hieu';
 console.log(person) // { name: 'Bui Hieu' }
 
 ```
+
 ### Có Prototype:
+
 ```
 prototypeObject = {
 	fullName: function(){
-		return this.firstName + ' ' + this.lastName		
+		return this.firstName + ' ' + this.lastName
 	}
 };
 var person = Object.create(prototypeObject);
@@ -63,8 +71,11 @@ person.fullName();
 
 console.log(person.fullName()); // Hieu Bui
 ```
+
 ## 2. Object.keys():
+
 Object.keys() tạo một mảng có chứa tất cả các key của một Object rồi trả về chúng, tương tự như vòng lặp for...i.
+
 ```
 // Initialize an object
 const employees = {
@@ -84,6 +95,7 @@ Output
 ```
 
 Object.keys chuyển đổi các khóa của đối tượng thành một mảng keys, bằng cách sử dụng vòng lặp `forEach`.
+
 ```
 // Iterate through the keys
 Object.keys(employees).forEach(key => {
@@ -98,7 +110,9 @@ secretary: Pam
 sales: Jim
 accountant: Oscar
 ```
+
 Chúng ta có thể kiểm tra độ dài của một `object` bằng cách sử dụng thuộc tính `length`.
+
 ```
 / Get the length of the keys
 const length = Object.keys(employees).length;
@@ -107,8 +121,11 @@ console.log(length);
 Output
 4
 ```
+
 ## 3. Object.values():
+
 Object.keys() tạo một mảng có chứa tất cả các value của một Object.
+
 ```
 // Initialize an object
 const session = {
@@ -125,8 +142,11 @@ console.log(values);
 Output
 [1, "26-July-2018", "mobile", "Chrome"]
 ```
+
 ## 4. Object.entries():
+
 Object.entries tạo ra một mảng lồng bao gồm các cặp key value của object
+
 ```
 // Initialize an object
 const operatingSystem = {
@@ -146,7 +166,9 @@ Output
     ["license", "Open Source"]
 ]
 ```
+
 Chúng ta cũng có thể dùng `forEach` để lặp và trả về key value.
+
 ```
 // Loop through the results
 entries.forEach(entry => {
@@ -160,11 +182,14 @@ name: Ubuntu
 version: 18.04
 license: Open Source
 ```
+
 Nó chỉ trả về thuộc tính chính nó chứ không trả về thuộc tính kế thừa thông qua nguyên mẫu nó.
 
 ## 4. Object.assign():
+
 Phương thức Object.assign() dùng để sao chép các giá trị của object này và gán tất cả các giá trị bên trong vào object được chỉ định.\
 Chúng ta có thể tạo hai đối tượng và hợp nhất chúng với Object.assign().
+
 ```
 // Initialize an object
 const name = {
@@ -185,7 +210,9 @@ console.log(character);
 Output
 {firstName: "Philip", lastName: "Fry", job: "Delivery Boy", employer: "Planet Express"}
 ```
+
 Chúng ta cũng có thể sử dụng `Spread Operator` để đạt được tương tự.
+
 ```
 // Initialize an object
 const name = {
@@ -206,8 +233,11 @@ console.log(character);
 Output
 {firstName: "Philip", lastName: "Fry", job: "Delivery Boy", employer: "Planet Express"}
 ```
+
 ## 5.Object.freeze():
-Object.freeze() dùng để đóng băng và ngăn chặn việc sửa đổi như: Creating và Modifying object đó. 
+
+Object.freeze() dùng để đóng băng và ngăn chặn việc sửa đổi như: Creating và Modifying object đó.
+
 ```
 // Initialize an object
 const user = {
@@ -225,8 +255,11 @@ console.log(newUser);
 Output
 {username: "AzureDiamond", password: "hunter2"}
 ```
+
 ## 6. Object.seal():
-Object.seal() được sử dụng để tránh không cho thuộc tính mới được thêm vào đối tượng, nhưng cho phép sửa đổi các thuộc tính hiện có. 
+
+Object.seal() được sử dụng để tránh không cho thuộc tính mới được thêm vào đối tượng, nhưng cho phép sửa đổi các thuộc tính hiện có.
+
 ```
 // Initialize an object
 const user = {
@@ -244,12 +277,23 @@ console.log(newUser);
 Output
 {username: "AzureDiamond", password: "*******"}
 ```
+
 ## 7. Object.getPrototypeOf():
-Object.getPrototypeOf() được sử dụng để lấy [[prototype]] ẩn bên trong một đối tượng, cũng có thể truy cập thông qua thuộc tính __proto__.
-```
+
+Object.getPrototypeOf() được sử dụng để lấy [[prototype]] ẩn bên trong một đối tượng, cũng có thể truy cập thông qua thuộc tính **proto**.
+
+```js
 const employees = ['Ron', 'April', 'Andy', 'Leslie'];
 
 Object.getPrototypeOf(employees);
 Output
 [constructor: ƒ, concat: ƒ, find: ƒ, findIndex: ƒ, pop: ƒ, …]
+```
+
+## 8. Object.is():
+
+phương thức Object.is() được sử dụng để so sánh hai giá trị xem chúng có bằng nhau hay không. Phương thức này trả về true nếu hai giá trị được so sánh là bằng nhau và false nếu chúng không bằng nhau.
+
+```js
+Object.is(value1, value2);
 ```
